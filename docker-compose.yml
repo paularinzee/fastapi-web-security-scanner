@@ -2,20 +2,24 @@ version: "3.9"
 
 services:
   backend:
-    build: ./backend
+    build:
+      context: ./backend
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./backend:/app  # For live-reloading in dev only
     networks:
       - scanner-network
+    environment:
+      - PYTHONUNBUFFERED=1
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend:/app
+      - ./frontend:/app  # For live-reloading in dev only
     networks:
       - scanner-network
     depends_on:
@@ -23,3 +27,4 @@ services:
 
 networks:
   scanner-network:
+    driver: bridge
