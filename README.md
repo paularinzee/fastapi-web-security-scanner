@@ -1,7 +1,7 @@
 
 # 🔍 Web Security Scanner
 
-A farm-stack web security scanner application built with **FastAPI** and **React**. It allows users to scan websites for common vulnerabilities like SQL Injection and XSS, and download a PDF report of the scan results.
+A web security scanner application built with **FastAPI** and **React**. It allows users to scan websites for common vulnerabilities like SQL Injection and XSS, and download a PDF report of the scan results.
 
 ---
 
